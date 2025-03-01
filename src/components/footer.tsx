@@ -22,13 +22,13 @@ export default function Footer(): JSX.Element {
         <div>
           <h4 className="font-bold mb-4">Social</h4>
           <div className="flex space-x-4">
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors text-xl">
+            <Link aria-label="Twitter" href="#" className="text-gray-400 hover:text-white transition-colors text-xl">
               <FaTwitter />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors text-xl">
+            <Link aria-label="Instagram" href="#" className="text-gray-400 hover:text-white transition-colors text-xl">
               <FaInstagram />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-white transition-colors text-xl">
+            <Link aria-label="LinkedIn" href="#" className="text-gray-400 hover:text-white transition-colors text-xl">
               <FaLinkedin />
             </Link>
           </div>
@@ -37,7 +37,7 @@ export default function Footer(): JSX.Element {
           <h4 className="font-bold mb-4">Newsletter</h4>
           <div className="flex">
             <input type="email" placeholder="Your email" className="bg-black/40 px-4 py-2 flex-1" />
-            <button className="bg-white text-black px-4 hover:bg-gray-200 transition-colors">
+            <button aria-label="Submit" className="bg-white text-black px-4 hover:bg-gray-200 transition-colors">
               <FaArrowRight />
             </button>
           </div>
