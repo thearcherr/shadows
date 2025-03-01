@@ -1,24 +1,39 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto.ttf");
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/Playfair.ttf");
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+.hero {
+  background-image: url("/img/bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-pf {
+  font-family: "Playfair Display", system-ui;
+}
+
+::selection {
+  background-color: white;
+  color: black
+}
+
+.div-circle {
+  clip-path: circle(50% at 50% 50%);
 }
