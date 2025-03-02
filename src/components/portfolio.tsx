@@ -151,7 +151,99 @@ export default function Portfolio(): JSX.Element {
           </div>
         </div>
       </div>
-      <div className="min-h-[160vh] flex items-center">
+
+      <div className="min-h-[160vh] md:hidden flex items-center">
+        <div className="w-11/12 min-h-[75vh] mx-auto grid gap-14">
+          <div>
+            <Image
+              src="/img/profile.webp"
+              alt="Profile Picture"
+              height={400}
+              width={400}
+              className="rounded-full mx-auto"
+            />
+          </div>
+          <div className="text-white flex items-center">
+            <div className="mx-auto flex flex-col gap-6">
+              <h1 className="text-4xl font-roboto font-semibold text-center">
+                <span className="relative">
+                  EVELYN MONROE
+                  <motion.div
+                    whileInView={{ scaleX: 0 }}
+                    transition={{ duration: 1 }}
+                    className="absolute inset-0 bg-white origin-right"
+                  ></motion.div>
+                </span>
+              </h1>
+              <span className="text-center relative">
+                Through the viewfinder, I seek to capture the ephemeral moments
+                that exist between light and shadow. My work explores the
+                delicate balance of contrast, form, and emotion in the
+                monochromatic spectrum.
+                <motion.div
+                  whileInView={{ scaleX: 0 }}
+                  transition={{ duration: 0.65 }}
+                  className="absolute inset-0 bg-white origin-right"
+                ></motion.div>
+              </span>
+              <div id="timeline" className="space-y-6 mx-auto mt-10">
+                <div className="flex gap-4 relative">
+                  <motion.div
+                    whileInView={{ scaleX: 0 }}
+                    transition={{ duration: 0.65 }}
+                    className="absolute inset-0 bg-white origin-right"
+                  ></motion.div>
+                  <div className="w-24 font-bold">2025</div>
+                  <div>
+                    <h3 className="font-bold">National Gallery Exhibition</h3>
+                    <p className="text-gray-400">
+                      Solo exhibition &quot;Shadows of Existence&quot;
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4 relative">
+                  <motion.div
+                    whileInView={{ scaleX: 0 }}
+                    transition={{ duration: 0.65 }}
+                    className="absolute inset-0 bg-white origin-right"
+                  ></motion.div>
+                  <div className="w-24 font-bold">2023</div>
+                  <div>
+                    <h3 className="font-bold">
+                      International Photography Award
+                    </h3>
+                    <p className="text-gray-400">
+                      First Place in Fine Art Category
+                    </p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <button
+                    onMouseOver={() => setBtnHovered(true)}
+                    onMouseOut={() => setBtnHovered(false)}
+                    className="mt-4 relative mx-auto py-2 px-6 cursor-pointer justify-self-center text-white font-bold border border-white rounded-md hover:text-black"
+                  >
+                    <AnimatePresence>
+                      {btnHovered && (
+                        <motion.div
+                          initial={{ scaleY: 0 }}
+                          animate={{ scaleY: 1 }}
+                          exit={{ scaleY: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute inset-0 bg-white origin-bottom rounded-md z-[-10]"
+                        ></motion.div>
+                      )}
+                    </AnimatePresence>
+                    <span className="z-10">Connect</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="min-h-[160vh] max-sm:hidden flex items-center">
         <motion.div
           initial={{ x: onPhone ? 0 : 400 }}
           whileInView={{ x: 0 }}
