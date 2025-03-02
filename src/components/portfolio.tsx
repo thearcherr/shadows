@@ -10,6 +10,8 @@ export default function Portfolio(): JSX.Element {
   const ref = useRef<HTMLDivElement>(null);
   const [btnHovered, setBtnHovered] = useState<boolean>(false);
 
+  const [onPhone, setOnPhone] = useState<boolean>(false);
+
   useEffect(() => {
     function lenisInit() {
       // Initialize Lenis
@@ -25,7 +27,21 @@ export default function Portfolio(): JSX.Element {
     }
 
     lenisInit();
-  }, []);
+
+    const checkDeviceType = () => {
+      const isPhone = window.innerWidth < 768; // Adjust the threshold as needed
+      setOnPhone(isPhone);
+      console.log(onPhone)
+    };
+
+    checkDeviceType();
+
+    window.addEventListener("resize", checkDeviceType);
+
+    return () => {
+      window.removeEventListener("resize", checkDeviceType);
+    };
+  }, [onPhone]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -137,7 +153,7 @@ export default function Portfolio(): JSX.Element {
       </div>
       <div className="min-h-[160vh] flex items-center">
         <motion.div
-          initial={{ x: 400 }}
+          initial={{ x: onPhone ? 0 : 400 }}
           whileInView={{ x: 0 }}
           transition={{ duration: 0.65 }}
           className="w-11/12 min-h-[75vh] mx-auto grid md:grid-cols-2 max-sm:gap-10"
